@@ -1,16 +1,20 @@
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $device_id = $_POST['device_id']; // Get the fingerprint
-    $key = $_POST['key']; // Optional: Include a key for verification
+<?PHP
+$data = '';
 
-    if (!empty($device_id)) {
-        // Save to a text file (you can use a database instead)
-        file_put_contents("fingerprints.txt", "$device_id\n", FILE_APPEND);
-        echo "Fingerprint Saved";
-    } else {
-        echo "Invalid Device ID";
+$user = 'user';
+$pass = 'pass';
+
+if (!empty($_REQUEST) ) {
+    if (!empty($_REQUEST[$user]) && !empty($_REQUEST[$pass])) {
+        if ($_REQUEST[$user] == 'testuser' && $_REQUEST[$pass] == 'testpass') {
+            $data = '1|'.md5($_REQUEST[$user] . $_REQUEST[$pass]).'|User: ' . $_REQUEST[$user] . ' successfully logged in!';
+        }else{
+            $data = '0|'.md5(date('Y-m-d h:i:s').rand(1, 9999)).'|Incorrect username or password!';
+        }
+    }else{
+        $data = '0|'.md5(date('Y-m-d h:i:s').rand(1, 9999)).'|Fill in username and password!';
     }
-} else {
-    echo "Invalid Request";
 }
-?>
+
+header('Content-Type: text/plain');
+echo $data;
