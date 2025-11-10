@@ -9,7 +9,7 @@
     "Fixed bugs in login screen",
     "Optimized network usage for better speed"
   ],
-  "update_required": false,
+  "update_required": true,
   "download_url": "https://t.me/soham_gameplay",
   "mirror_url": "https://mirror.examplecdn.net/app/update.apk",
   "getsecret_url": "https://exe.io/eE2RKSg",
