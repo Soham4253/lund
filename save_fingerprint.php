@@ -10,8 +10,8 @@
     "Optimized network usage for better speed"
   ],
   "update_required": true,
-  "download_url": "https://t.me/soham_gameplay",
-  "mirror_url": "https://t.me/soham_gameplay",
+  "download_url": "https://t.me/sohamgameplay",
+  "mirror_url": "https://t.me/sohamgameplay",
   "getsecret_url": "https://exe.io/eE2RKSg",
   "release_date": "2025-10-09",
   "size": "45MB",
